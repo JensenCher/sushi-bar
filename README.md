@@ -39,3 +39,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 - [Next.js & Convex](https://docs.convex.dev/quickstart/nextjs)
 - Go to [Convex Auth with Clerk](https://docs.convex.dev/auth/clerk)
+
+## Running Convex Dev & Next.js
+
+```bash
+# Terminal 1 - Convex
+pnpm convex dev
+```
+
+```bash
+# Terminal 2 - Next.js
+pnpm dev
+```
