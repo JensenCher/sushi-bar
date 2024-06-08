@@ -1,37 +1,24 @@
 "use client";
 
-import { SignInButton, UserButton } from "@clerk/nextjs";
-import {
-  Authenticated,
-  Unauthenticated,
-  useMutation,
-  useQuery,
-} from "convex/react";
+import { Authenticated, useQuery } from "convex/react";
 import { api } from "../../convex/_generated/api";
+import CreateInventoryButton from "./_components/create-inventory-button";
+import InventoryCard from "./_components/inventory-card";
 
 export default function Home() {
-  const createInventory = useMutation(api.inventories.createInventory);
   const inventories = useQuery(api.inventories.getInventories);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start p-24">
-      Hi
-      <div>
-        <Unauthenticated>
-          <SignInButton />
-        </Unauthenticated>
+    <main className="container flex flex-col gap-8 p-16">
+      <div className="flex items-center justify-between">
+        <h1 className="text-4xl font-bold">Inventories</h1>
         <Authenticated>
-          <UserButton />
-          <button
-            onClick={() => {
-              createInventory({ title: "hello CHicken" });
-            }}
-          >
-            Click Me
-          </button>
+          <CreateInventoryButton />
         </Authenticated>
       </div>
-      <div>
-        {inventories?.map((inv) => <div key={inv._id}>{inv.title}</div>)}
+      <div className="my-4 grid grid-cols-2 gap-8 md:grid-cols-4">
+        {inventories?.map((inv) => (
+          <InventoryCard key={inv._id} inventory={inv} />
+        ))}
       </div>
     </main>
   );
