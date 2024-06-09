@@ -1,21 +1,26 @@
 import { Loader2 } from "lucide-react";
 import { Button } from "./button";
-import { ReactNode } from "react";
+import { MouseEvent, ReactNode } from "react";
 
 export function LoadingButton({
   isLoading,
   loadingText,
   children,
+  onClick,
 }: {
   isLoading: boolean;
   loadingText: string;
   children: ReactNode;
+  onClick?: (e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => void;
 }) {
   return (
     <Button
       type="submit"
       className="flex items-center justify-center gap-2"
       disabled={isLoading}
+      onClick={(e) => {
+        onClick?.(e);
+      }}
     >
       {isLoading ? (
         <>
