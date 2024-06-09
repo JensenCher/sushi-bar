@@ -26,7 +26,7 @@ export default function InventoryPage({
           <Skeleton className="h-[20px] w-[160px] rounded-full" />
           <div className="flex items-center justify-between">
             <Skeleton className="h-[3rem] w-[20rem] rounded-full" />
-            <Skeleton className="h-[3rem] w-[6rem] rounded-xl" />
+            <Skeleton className="h-10 w-[6rem] rounded-md" />
           </div>
           <div className="my-4 grid grid-cols-2 gap-8 md:grid-cols-4">
             <Skeleton className="h-40 w-full rounded-xl" />

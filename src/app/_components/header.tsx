@@ -5,7 +5,7 @@ import { HeaderActions } from "./header-actions";
 
 const Header = () => {
   return (
-    <div className="bg-slate-900 py-2">
+    <div className="bg-black/10 py-2">
       <div className="container mx-auto flex items-center justify-between gap-3">
         <Link
           href={"/"}
@@ -17,12 +17,10 @@ const Header = () => {
             width={35}
             height={35}
           />
-          <span className="text-xl font-semibold text-slate-300">
-            Sushi Bar
-          </span>
+          <span className="text-xl font-semibold text-primary">Sushi Bar</span>
         </Link>
         <div className="flex items-center justify-end gap-4">
-          <ModeToggle />
+          {/* <ModeToggle /> */}
           <HeaderActions />
         </div>
       </div>

@@ -24,8 +24,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased vsc-initialized",
-          fontSans.variable
+          "vsc-initialized min-h-screen bg-background bg-[url('/paper_bg.jpg')] bg-repeat font-sans antialiased",
+          fontSans.variable,
         )}
       >
         <Providers>
